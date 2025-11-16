@@ -9,15 +9,36 @@
     justify-content: center;
 }
 .drop_zone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     width: 730px;
     height: 320px;
     border-radius: 5px;
     background-color: #13161F;
+}
+.drop_zone img{
+    width: 250px;
+}
+.drop_zone p{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    color: white
 }
 .watch_file{
     width:730px;
     height: 320px;
     border-radius: 5px;
     background-color: #13161F;
+    display: flex;
+    justify-content: center;
+}
+
+.watch_file img{
+    width: 100px;
+    justify-self: center;
 }
 
