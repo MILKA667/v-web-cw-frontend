@@ -1,14 +1,13 @@
 import './style.css'
 function FileDropzone(){
     return(
-        <div className="drop_zone">
-            <p>Перетащите сюда аудиофайл или изображение</p>
-            <input
-                type='file'
-                id='file_upload'
-                accept='.png'
-                style={{display:'none'}}
-            />
+        <div className="drop_zone_container">
+            <div className='drop_zone'>
+                
+            </div>
+            <div className='watch_file'>
+                
+            </div>
         </div>
     )
 }
