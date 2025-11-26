@@ -38,7 +38,9 @@
 }
 
 .watch_file img{
-    width: 100px;
+    max-height: 98%;
+    border-radius: 5px;
+    align-self: center;
     justify-self: center;
 }
 
