@@ -1,0 +1,16 @@
+.result_container{
+    background-color: #1A1D29;
+    border-radius: 5px;
+}
+
+.result_card{
+    justify-self: center;
+    width: 90%;
+    height: 300px;
+    background-color: #13161F;
+    border-radius: 5px;
+}
+
+.result_card vid{
+    max-height: 95%;
+}

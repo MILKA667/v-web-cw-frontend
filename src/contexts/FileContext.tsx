@@ -1,0 +1,19 @@
+import { createContext, useState } from "react";
+
+interface FileContextValue {
+  file: File | null;
+  setFile: (file: File | null) => void;
+}
+
+export const FileContext = createContext<FileContextValue | undefined>(undefined);
+
+export const FileProvider = ({ children }: { children: any }) => {
+  const [file, setFile] = useState<File | null>(null);
+
+  return (
+    <FileContext.Provider value={{ file, setFile }}>
+      {children}
+    </FileContext.Provider>
+  );
+};
+

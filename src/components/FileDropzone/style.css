@@ -1,17 +1,46 @@
+.drop_zone_container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #1A1D29;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    column-gap: 20px;
+    justify-content: center;
+}
 .drop_zone{
-    margin-top: 35px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #2B2A33;
-    height: 400px;
-    width: 700px;
-    border-radius: 15px;    
-    border: solid black;
-    border-width: medium;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 730px;
+    height: 320px;
+    border-radius: 5px;
+    background-color: #13161F;
+}
+.drop_zone img{
+    width: 250px;
+}
+.drop_zone p{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    color: white
+}
+.watch_file{
+    width:730px;
+    height: 320px;
+    border-radius: 5px;
+    background-color: #13161F;
+    display: flex;
+    justify-content: center;
 }
 
-.drop_zone p{
-    margin-top: 100px;
+.watch_file img{
+    max-height: 98%;
+    border-radius: 5px;
+    align-self: center;
+    justify-self: center;
 }
 
