@@ -7,6 +7,7 @@ import LoginPage from './pages/Login'
 import ProtectedRoute from './components/ProtectedRoute'
 import ProfilePage from './pages/Profile'
 import { Outlet } from 'react-router-dom'
+import Like from './pages/Like'
 
 function MainLayout() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/likes" element={<Like />} />
           </Route>
 
           <Route path="/login" element={<LoginPage />} />

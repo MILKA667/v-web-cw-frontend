@@ -1,90 +1,97 @@
-.settings_container{
-    background-color: #1A1D29;
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+.settings_container .search_content{
+    background-color: #1B1B1B;
     border-radius: 5px;
-    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
-.radio_button_container{
-    margin-top: 10px;
-    justify-self: center;
-    background-color: #13161F;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    width: 90%;
+.settings_container p{
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
 }
 
-.settings_container button {
-    font-size: 17px;
-    width: 250px;
-    height: 30px;
-    justify-self: center;
-    border: transparent;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+.start_button{
+    margin-top: 20px;
+    height: 40px;
+    background-color: #00FF99;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.start_button:hover {
+    transform: translateY(-5px);
+}
+
+.button_group {
+    display: grid;
+    margin-right: 15px;
+    margin-left: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-top: 17px;
+    margin-bottom: 40px;
+}
+
+
+.button_group button {
+    width: 360px;
+    height: 120px;
+    border-radius: 15px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    background-color: #1B1B1B;
     color: white;
-    border-radius: 5px;
-    background: #00A8FF;
-    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
-.settings_container button:hover {
-    transform: translateY(-1px);
-}
-
-.radio-group {
-    width: 90%;
-    background-color: #13161F;
-    padding: 10px 15px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.radio {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-}
-
-.radio input {
+.button_group button p {
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    margin: 0;
     position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.radio-custom {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #00A8FF;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    transition: 0.2s;
-}
-
-.radio input:checked + .radio-custom::after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: #00A8FF;
-    border-radius: 50%;
-    position: absolute;
+    left: 20px;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    color: #000000
 }
 
-.radio:hover .radio-custom {
-    box-shadow: 0 0 8px #00A8FF;
-    transform: scale(1.05);
+.button_group button img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
+
+.button_group .ActiveButton{
+    background-color: #00FF99;
+}
+
+.button_group .noActiveButton{
+    background-color: #282828;
+}
+
+

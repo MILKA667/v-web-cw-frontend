@@ -1,7 +1,7 @@
 .drop_zone_container{
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #1A1D29;
+    background-color: #282828;
     display: flex;
     flex-direction: row;
     border-radius: 5px;
@@ -14,10 +14,10 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 730px;
-    height: 320px;
+    width: 600px;
+    height: 340px;
     border-radius: 5px;
-    background-color: #13161F;
+    background-color: #1B1B1B;
 }
 .drop_zone img{
     width: 250px;
@@ -28,19 +28,22 @@
     font-size: 20px;
     color: white
 }
-.watch_file{
-    width:730px;
-    height: 320px;
+.drop_zone_container .content button{
+    margin-top: 20px;
+    height: 40px;
+    background-color: #282828;
+    border-color: #00FF99;
     border-radius: 5px;
-    background-color: #13161F;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
-.watch_file img{
-    max-height: 98%;
-    border-radius: 5px;
-    align-self: center;
-    justify-self: center;
+.drop_zone_container .content button:hover {
+    transform: translateY(-5px);
 }
 

@@ -1,11 +1,12 @@
 import './style.css'
 import { FileContext } from '../../contexts/FileContext'
 import { useState, useEffect, useContext } from 'react'
+import SearchParams from '../SearchParams'
 
 function FileDropzone() {
     const [previewUrl, setPreviewUrl] = useState<string | null>(null)
     const [isDragging, setIsDragging] = useState(false)
-    const { file, setFile } = useContext(FileContext)!
+    const { file, setFile, clearFile } = useContext(FileContext)!
 
     const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault()
@@ -45,35 +46,40 @@ function FileDropzone() {
 
     return (
         <div className="drop_zone_container">
-            <div
-                className={`drop_zone ${isDragging ? 'dragging' : ''}`}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-                onClick={() => document.getElementById('input_file')?.click()}
-            >
-                <img src='/upload_icon.svg' />
-                <p>Нажмите или перетащите для загрузки файла</p>
-                <input
-                    type='file'
-                    accept='.png'
-                    id='input_file'
-                    style={{ display: 'none' }}
-                    onChange={handleFileSelect}
-                />
+            <div className='content'>
+                <div
+                    className={`drop_zone ${isDragging ? 'dragging' : ''}`}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    onDrop={handleDrop}
+                    onClick={() => document.getElementById('input_file')?.click()}
+                >
+                    {previewUrl ? (
+                        <img
+                            src={previewUrl}
+                            alt="Preview"
+                            style={{ width: '200px', height: '200px', objectFit: 'contain' }}
+                        />
+                    ) : (
+                        <>
+                            <img src='/upload_icon.svg' alt="Upload Icon" />
+                            <p>Нажмите или перетащите для загрузки файла</p>
+                        </>
+                    )}
+
+                    <input
+                        type='file'
+                        accept='.png'
+                        id='input_file'
+                        style={{ display: 'none' }}
+                        onChange={handleFileSelect}
+                    />
+                </div>
+                <button onClick={()=>clearFile()}>Очистить</button>
             </div>
 
-            {!file && (
-                <div className='watch_file'>
-                    <img src="/play_icon.svg" alt="play" />
-                </div>
-            )}
 
-            {previewUrl && (
-                <div className='watch_file'>
-                    <img src={previewUrl} alt="preview" />
-                </div>
-            )}
+            <SearchParams />
         </div>
     )
 }

@@ -1,28 +1,35 @@
-import { createContext, useState } from "react";
+import { createContext, useState, ReactNode } from "react";
 
-interface Result {
-    name: string;
-    image: string | undefined;
-    video: string | undefined;
+export interface Result {
+    filename: string;
+    image?: string | null;   
+    video?: string | null;    
+    similarity?: number;
+    episode?: number | null;
+    anilist?: any;            
+    from?: number;
+    at?: number;
+    to?: number;
+    duration?: number;
 }
 
+
 interface ResultContextValue {
-    result: Result;
-    setResult: (value: Result) => void;
+    results: Result[];
+    setResults: (value: Result[]) => void;
+    clearResults: () => void;
 }
 
 export const ResultContext = createContext<ResultContextValue | undefined>(undefined);
 
-export const ResultProvider = ({ children }: { children: any }) => {
+export const ResultProvider = ({ children }: { children: ReactNode }) => {
     
-    const [result, setResult] = useState<Result>({
-        name: "",
-        image: undefined,
-        video: undefined,
-    });
+    const [results, setResults] = useState<Result[]>([]);
+
+    const clearResults = () => setResults([]);
 
     return (
-        <ResultContext.Provider value={{ result, setResult }}>
+        <ResultContext.Provider value={{ results, setResults, clearResults }}>
             {children}
         </ResultContext.Provider>
     );

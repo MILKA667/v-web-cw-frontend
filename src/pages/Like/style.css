@@ -1,0 +1,59 @@
+.like_page{
+    display: flex;
+    width: 80%;
+    gap: 25px;
+    margin-top: 40px;
+    justify-self: center;
+    flex-direction: row;
+}
+.params{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.like_container{
+    width: 65%;
+    border-radius: 15px;
+    background-color: #282828;
+}
+.params button {
+    width: 360px;
+    height: 100px;
+    border-radius: 15px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    background-color: #1B1B1B;
+    color: white;
+}
+
+.params button p {
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000
+}
+
+.params button img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+}
+
+.params .ActiveButton{
+    background-color: #00FF99;
+}
+
+.params .noActiveButton{
+    background-color: #282828;
+}

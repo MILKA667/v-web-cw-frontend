@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './style.css'
 
 function Login() {
     async function login(email: string, password: string) {
@@ -12,6 +13,7 @@ function Login() {
 
         if (data.token) {
             localStorage.setItem("token", data.token);
+            localStorage.setItem("nickname", data.username)
             window.location.href = "/";
         } else {
             alert("Неверный логин или пароль");
